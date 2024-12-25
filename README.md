@@ -1,7 +1,7 @@
-Step 1
- Kumpulin data, atur jadi perkelas di excel (walaupun sekali pengiriman ada limit per 100 user, ini akan mempermudah kalo ada yang minta kirim email ulang)
- Pastiin buat 4 kolom yang wajib ada (nis, nama, link form, link qr code)
-Step 2
+Step 1<br>
+ Kumpulin data, atur jadi perkelas di excel (walaupun sekali pengiriman ada limit per 100 user, ini akan mempermudah kalo ada yang minta kirim email ulang)<br>
+ Pastiin buat 4 kolom yang wajib ada (nis, nama, link form, link qr code)<br>
+Step 2<br>
  Buat Form yang isinya nama semua orang sesuai kelas (pake opsi pilihan) (langsung ctrl+c ctrl+v otomatis bisa langsung sekelas kok)
  <img width="1280" alt="image" src="https://github.com/user-attachments/assets/8622d287-c80c-44e3-a2de-acd2feafca8a" />
  Kalo udah, Tambahin opsi Hadir
@@ -19,24 +19,25 @@ Step 3<br>
  Dibagian potongan ketiga, awalnya diantara nama adanya spasi, pakai find and replace " " untuk ganti jadi "="
  Dibagian potongan terakhir, semua sama kaya gitu
  <img width="941" alt="image" src="https://github.com/user-attachments/assets/5fe322a5-ffcd-402c-88d8-bb52f2ec5366" />
- Selanjutnya gabungin semua elemen yang tadi dipecah-pecah, pakai "=CONCAT()", kalo udah kegabung, hold dan pilih data itu, copy, terus paste as value
- Jika sudah fix, ubah link ini jadi qr code (pakai website, cari aja bulk qr code)
- ingat, saat diubah, atur format gambar yang urut, (contoh (img.1))
+ Selanjutnya gabungin semua elemen yang tadi dipecah-pecah, pakai "=CONCAT()" (untuk di windows, kalo pake OS lain cari aja rumusnya di google) , kalo udah kegabung, hold dan pilih data itu, copy, terus paste as value<br>
+ Jika sudah fix, ubah link ini jadi qr code (pakai website, cari aja bulk qr code)<br>
+ ingat, saat diubah, atur format gambar yang urut, (contoh (img.1))<br>
 Step 4<br>
- Up qr code di github, sesuai kelasnya masing-masing.
- Jangan lupa buat up file gambar undangannya juga
- bagi 3 lagi kaya gini, sesuaiin angkanya saja,
- jika sudah, seperti biasa, gabungin pakai "=CONCAT()" dan paste as value
+ Up qr code di github, sesuai kelasnya masing-masing.<br>
+ Jangan lupa buat up file gambar undangannya juga<br>
+ bagi 3 lagi kaya gini, sesuaiin angkanya saja,<br>
+ jika sudah, seperti biasa, gabungin pakai "=CONCAT()" dan paste as value<br>
  <img width="600" alt="image" src="https://github.com/user-attachments/assets/605c7475-4602-4045-ac77-3557a3ebe6d8" />
 Step 5<br>
- Jika sudah, buat file di spreadsheet.
- Disclaimer, karena batas pengiriman email maksimal 100 email perhari, buat 1 sheet jadi 100 email.
- Disini kalian terpaksa harus buat beberapa email, nyesuaiin kuantitas yang dibutuhin.
- Usahakan kirim email beberapa hari sebelum acaranya (berangsur juga) karena menurut saya, ini cukup aman dan memanage limit kirim email di akun-akun kalian.
- Jika sheet sudah diatur, klik extension lalu klik Apps Script
- Setelah di Apps Script, masukin code yang sudah dibuat (kayanya ini lebih support JS)
+ Jika sudah, buat file di spreadsheet.<br>
+ Disclaimer, karena batas pengiriman email maksimal 100 email perhari, buat 1 sheet jadi 100 email.<br>
+ Disini kalian terpaksa harus buat beberapa email, nyesuaiin kuantitas yang dibutuhin.<br>
+ Usahakan kirim email beberapa hari sebelum acaranya (berangsur juga) karena menurut saya, ini cukup aman dan memanage limit kirim email di akun-akun kalian.<br>
+ Jika sheet sudah diatur, klik extension lalu klik Apps Script<br>
+ Setelah di Apps Script, masukin code yang sudah dibuat (kayanya ini lebih support JS)<br>
  (atur aja code nya dari source code, keterangan yang diubah-ubah udah ada slash commentnya)
- Jika sudah, debug saja dulu sebelum run, pastiin tidak ada kesalahan program
+ <img width="1280" alt="image" src="https://github.com/user-attachments/assets/ea0345aa-c1fe-48b0-9603-e7541d34861a" />
+ Jika sudah, debug saja dulu sebelum run, pastiin tidak ada kesalahan program<br>
  kalau sudah fix, gasken di run ygy
 
  
