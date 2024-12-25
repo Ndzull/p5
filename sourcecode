@@ -1,0 +1,118 @@
+function generateEmails() {
+  var smtpServer = "smtp.gmail.com";
+  var smtpPort = 465;
+  var username = "workergithub@gmail.com";
+  var password = "browncoffee";
+
+  // var spreadsheet = SpreadsheetApp.openById("1PAAtia9vCpS36RyNQ3CrITDvBiTmM_ifqK6fthQlSuw"); // buat nyoba
+  // var spreadsheet = SpreadsheetApp.openById("13MiE3OjyeoJmLTxN-2Ca_cyJADwqhWX2EsYLCdaR2O0"); // real data
+  // var spreadsheet = SpreadsheetApp.openById(""); // buat pas hari-h
+  var spreadsheet = SpreadsheetApp.openById(""); // masukin link spreadsheet yang sesuai
+  var cnt = 0;
+
+// A2 nis || B2 nama || C2 email || D2 link qr_code github
+
+  var sheetSatu = spreadsheet.getSheetByName("resend2"); // disesuaiin nama file spreadsheetnya
+  var dataSatu = sheetSatu.getRange('A99:D99').getValues(); //disesuaiin sama banyaknya data
+  for (var t = 0; t < dataSatu.length; t++) {
+    sendEmail(dataSatu[t]); 
+  }
+
+  function sendEmail(rowData) {
+    var nis = rowData[0]; // kolom a
+    var name = rowData[1]; // kolom b
+    var email = rowData[2]; // kolom c
+    var qr_code = rowData[3]; // kolom d
+
+    // Debugging
+    console.log("Nama:", name);
+    console.log("Email:", email);
+    console.log("QR Code:", qr_code);
+    cnt++;
+    console.log("Total email kekirim:", cnt);
+    // Utilities.sleep(5000);
+
+      var message = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+          <title>PEMILIHAN KETUA DAN WAKIL KETUA MPK DAN OSIS SMAN 1 CIREBON 2024</title>
+          <style>
+              body {
+                  font-family: 'Poppins', sans-serif;
+                  background-color: #f5f5f5;
+                  padding: 20px;
+                  text-align: center;
+              }
+
+              .container {
+                  max-width: 600px;
+                  margin: 0 auto;
+                  background-color: #fff;
+                  padding: 20px;
+                  border-radius: 10px;
+                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              }
+
+              h1, h3 {
+                  color: #333;
+              }
+
+              img {
+                  max-width: 100%;
+                  height: auto;
+                  margin-bottom: 20px;
+              }
+
+              .qr-code {
+                  margin-top: 20px;
+              }
+
+              .copyright {
+                  color: blue;
+              }
+          </style>
+      </head>
+      <body>
+          <div class="container">
+            <h1><i>tengtong~</i> &#128276;&#128233;&#128227;</h1> 
+            <h2>Kamu memiliki hak suara untuk berpartisipasi dalam pemilihan Ketua dan Wakil Ketua MPK dan OSIS SMAN 1 CIREBON tahun 2024!&#128204;&#128221;&#127979;</h2>
+            <h3>Jangan lupa catat informasi ini!</h3>
+            <h4>&#128198;Hari dan Tanggal: Selasa, 3 September 2024<br>
+            &#128342;Waktu: 07.00 WIB - selesai<br>
+            &#128205;Lokasi Pemilihan: Lab. Komputer 1 SMAN 1 Cirebon<br>
+            &#128274;Nomor Induk Siswa: ${nis}<br>
+            <i>*note: gunakan NIS untuk masuk pada laman website E-Voting</i></h4>
+            <img src="https://github.com/Ndzull/p5/blob/main/undangan/Picture1.png?raw=true" alt="Image 1">
+            <img src="https://github.com/Ndzull/p5/blob/main/undangan/Picture2.png?raw=true" alt="Image 2">
+            <h3>Tunjukan kode respons cepat ini untuk masuk ke ruang pemilihan.</h3>
+            <h3>Terima kasih!</h3>
+            <a href="https://instagram.com/iclub.81" target="_blank">© Informatics Club 81</a>
+          </div>
+      </body>
+      </html>
+    `;
+
+    var subject = "Halo, " + name + " !"; // header email
+
+    try {
+     GmailApp.sendEmail(email, subject, message, {
+        name: "PEMILIHAN KETUA DAN WAKIL KETUA MPK DAN OSIS SMAN 1 CIREBON 2024", // paling atas (from)
+        htmlBody: message,
+        attachments: [UrlFetchApp.fetch(qr_code).getBlob()],
+        smtpServer: smtpServer,
+        port: smtpPort,
+        userName: username,
+        password: password,
+        useSsl: true
+      });
+      Logger.log("done yh " + email);
+      // Utilities.sleep(5000);
+    } catch (e) {
+      Logger.log("error" + email + ": " + e);
+    }
+  }
+}
