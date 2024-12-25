@@ -9,8 +9,8 @@ Step 2
  Klik titik tiga di pojok kanan, terus pilih yang ini
  <img width="1280" alt="image" src="https://github.com/user-attachments/assets/cc355227-9729-47b2-bb42-7eff23321166" />
  Klik sample kelas, klik hadir, terus dapatkan link (perkelas linknya beda!) (link ini untuk qr code nanti)
- <img width="1280" alt="image" src="https://github.com/user-attachments/assets/28dae648-bfb8-4a4e-a68a-1e99044740cf" />St
-Step 3
+ <img width="1280" alt="image" src="https://github.com/user-attachments/assets/28dae648-bfb8-4a4e-a68a-1e99044740cf" />
+Step 3<br>
  Tadi udah dapet link, develop linknya di excel.
  Buat format linknya jadi seperti ini
  <img width="1280" alt="image" src="https://github.com/user-attachments/assets/8cd0285c-e098-4fb6-b70d-999fba5d8ada" />
@@ -22,13 +22,13 @@ Step 3
  Selanjutnya gabungin semua elemen yang tadi dipecah-pecah, pakai "=CONCAT()", kalo udah kegabung, hold dan pilih data itu, copy, terus paste as value
  Jika sudah fix, ubah link ini jadi qr code (pakai website, cari aja bulk qr code)
  ingat, saat diubah, atur format gambar yang urut, (contoh (img.1))
-Step 4
+Step 4<br>
  Up qr code di github, sesuai kelasnya masing-masing.
  Jangan lupa buat up file gambar undangannya juga
  bagi 3 lagi kaya gini, sesuaiin angkanya saja,
  jika sudah, seperti biasa, gabungin pakai "=CONCAT()" dan paste as value
  <img width="600" alt="image" src="https://github.com/user-attachments/assets/605c7475-4602-4045-ac77-3557a3ebe6d8" />
-Step 5
+Step 5<br>
  Jika sudah, buat file di spreadsheet.
  Disclaimer, karena batas pengiriman email maksimal 100 email perhari, buat 1 sheet jadi 100 email.
  Disini kalian terpaksa harus buat beberapa email, nyesuaiin kuantitas yang dibutuhin.
