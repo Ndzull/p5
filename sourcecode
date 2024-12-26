@@ -33,7 +33,7 @@ function generateEmails() {
     // Utilities.sleep(5000);
 
       var message = `
-      <!DOCTYPE html>
+      <!DOCTYPE html> // bagian html ini atur aja untuk tampilan. Aturnya pakai vscode ya, biar bisa liat tampilannya
       <html lang="en">
       <head>
           <meta charset="UTF-8">
